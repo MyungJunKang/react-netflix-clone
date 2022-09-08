@@ -1,5 +1,11 @@
 import instance from "./AxiosInstance";
 
+export const getMovieDetail = async (id) => {
+  return await instance.get(`movie/${id}`, {
+    params: { append_to_response: "videos" },
+  });
+};
+
 export const getNowPlaying = async () => {
   return await instance.get(`movie/now_playing`);
 };
